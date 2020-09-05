@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MAST_Holder
   - Fire
+  - Token
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - PostProcessing
   - MinimapObj
-  - 
-  - 
+  - Token
+  - Player
   - 
   - 
   - 
