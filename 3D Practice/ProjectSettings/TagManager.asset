@@ -7,6 +7,7 @@ TagManager:
   - MAST_Holder
   - Fire
   - Token
+  - Enemy
   layers:
   - Default
   - TransparentFX
