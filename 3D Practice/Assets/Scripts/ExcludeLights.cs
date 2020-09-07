@@ -17,7 +17,6 @@ public class ExcludeLights : MonoBehaviour
         foreach (Light light in Lights)
         {
             light.enabled = false;
-            Debug.Log("light disabled");
         }
     }
 
