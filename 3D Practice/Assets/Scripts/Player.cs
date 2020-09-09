@@ -5,10 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int tokenCount;
+    public AudioClip[] tokenSounds;
+    private AudioSource sound;
     // Start is called before the first frame update
     void Start()
     {
         tokenCount = 0;
+        sound = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +31,8 @@ public class Player : MonoBehaviour
         {
             tokenCount += 1;
             Debug.Log("Token count: "+tokenCount);
+            sound.clip = tokenSounds[Random.Range(0, tokenSounds.Length)];
+            sound.Play();
             Destroy(other.gameObject);
         }
     }
