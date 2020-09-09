@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Collision detected");
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Game over");
