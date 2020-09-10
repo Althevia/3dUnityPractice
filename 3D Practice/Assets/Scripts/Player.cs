@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision detected");
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Game over");
@@ -34,6 +33,9 @@ public class Player : MonoBehaviour
             sound.clip = tokenSounds[Random.Range(0, tokenSounds.Length)];
             sound.Play();
             Destroy(other.gameObject);
+        }else
+        {
+            Debug.Log("Unknown collision detected");
         }
     }
 }
