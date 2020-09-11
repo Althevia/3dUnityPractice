@@ -244,9 +244,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 084ffaff
-      m_LastClickedID: -372984
-      m_ExpandedIDs: 2e97ffff86acffff88acffff12afffff18afffffc6f8ffffdcf8ffffe6f8ffff1ef9ffff54fbffff503b00005a3b0000c63b0000e43b0000c63c0000
+      m_SelectedIDs: be3b0000da3b00000a3c0000
+      m_LastClickedID: 15370
+      m_ExpandedIDs: 2efbffff823b0000be3b0000ea3b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -337,9 +337,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 229.314, y: 418.4775, z: -41.412968}
+    m_Target: {x: 43.136417, y: 2.9439259, z: -312.86664}
     speed: 2
-    m_Value: {x: 229.314, y: 418.4775, z: -41.412968}
+    m_Value: {x: 43.136417, y: 2.9439259, z: -312.86664}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -390,16 +390,16 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 389.75195
+    m_Target: 108.251724
     speed: 2
-    m_Value: 389.75195
+    m_Value: 108.251724
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.49748743
+    m_Speed: 0.9403
+    m_SpeedNormalized: 0.46748742
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -410,7 +410,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0.21894178, y: 0.41034213, z: 0.10266185, w: -0.87948185}
+  m_LastSceneViewRotation: {x: -0.18647715, y: -0.73991066, z: 0.22816028, w: -0.6047384}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -662,21 +662,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Images
+    - Assets/Mega Fantasy Props Pack/Prefabs/Walls/Big
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Images
+  - Assets/Mega Fantasy Props Pack/Prefabs/Walls/Big
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Users\annie\Documents\GitHub\3dUnityPractice\3D Practice
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 119.80002}
-    m_SelectedIDs: c0090100
-    m_LastClickedID: 68032
-    m_ExpandedIDs: 0000000026400000284000002a4000002c4000002e40000000ca9a3b
+    scrollPos: {x: 0, y: 419.80002}
+    m_SelectedIDs: 38400000
+    m_LastClickedID: 16440
+    m_ExpandedIDs: 000000003440000036400000384000003a4000003c4000005c400000484900007a4b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -704,7 +704,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000026400000284000002a4000002c4000002e40000030400000
+    m_ExpandedIDs: 000000003440000036400000384000003a4000003c400000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -729,21 +729,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 084ffaff
-    m_LastClickedInstanceID: -372984
+    m_SelectedInstanceIDs: be3b0000da3b00000a3c0000
+    m_LastClickedInstanceID: 15294
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000fa2a00005c2b0000da0100004e2a0000a8310000905900006e310000de330000c03300007441000002400000c2300000502e0000ec320000d44b00007a320000aa2d000008300000ac330000222e00008432000082320000bc330000ce350000ba2f0000602e00000236000078300000984000004e8f0000323400008a330000c42f0000682d00008a2b00000c2d0000982d0000482d0000822900001c2a0000542a000052330000f42e0000fa3300007c310000362e0000062d0000e02c0000f82d0000dc2d0000e22d0000062c0000ba2c00009e2a0000ac2b0000bc2b00001a2a0000142a0000be2b0000c22a0000202a00009e2b0000442c0000d4290000a42c0000e2300000242c0000fc2e0000403a0000862c0000182d0000d42c0000fe2a00001e2e00001c2e0000202e000002b4000006ab0000faab0000f8ab00003091060000000000d03c0000dc500000109b0000363d000044090100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Prefabs
-      m_OriginalName: Prefabs
+      m_Name: wood_wall.000
+      m_OriginalName: wood_wall.000
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 46190
+      m_UserData: 15782
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 15558
+  m_LastSelectedObjectID: 15294
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52

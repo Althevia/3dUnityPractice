@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public int tokenCount;
+    public int totalTokens;
+    public UnityEngine.UI.Text tokenText;
     public AudioClip[] tokenSounds;
     private AudioSource sound;
     // Start is called before the first frame update
@@ -29,10 +32,15 @@ public class Player : MonoBehaviour
         else if (other.gameObject.CompareTag("Token"))
         {
             tokenCount += 1;
-            Debug.Log("Token count: "+tokenCount);
             sound.clip = tokenSounds[Random.Range(0, tokenSounds.Length)];
             sound.Play();
+            tokenText.text = tokenCount + "/" + totalTokens;
             Destroy(other.gameObject);
+
+            if(tokenCount == totalTokens)
+            {
+                Debug.Log("Victory");
+            }
         }else
         {
             Debug.Log("Unknown collision detected");
