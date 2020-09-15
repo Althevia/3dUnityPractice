@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public int tokenCount;
     public int totalTokens;
-    public UnityEngine.UI.Text tokenText;
+    public Text tokenText;
     public AudioClip[] tokenSounds;
     private AudioSource sound;
     // Start is called before the first frame update
