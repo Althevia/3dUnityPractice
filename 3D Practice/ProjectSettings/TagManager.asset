@@ -9,6 +9,7 @@ TagManager:
   - Token
   - Enemy
   - BlueBottle
+  - Exit
   layers:
   - Default
   - TransparentFX

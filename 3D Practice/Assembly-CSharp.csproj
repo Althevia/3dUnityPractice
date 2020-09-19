@@ -149,6 +149,7 @@
   <ItemGroup>
     <None Include="Assets\Imported Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
     <None Include="Assets\Imported Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
+    <None Include="Assets\Images\Sources.txt" />
     <None Include="Assets\Imported Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
     <None Include="Assets\Imported Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Imported Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
