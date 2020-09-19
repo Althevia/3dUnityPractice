@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public GameObject mainCamera;
     private int lives = 3;
     public Canvas deathCanvas;
     public GameObject deathScreen;
+    public bool freeze = false;
+
     public Enemy[] enemyScripts;
 
     public int tokenCount = 0;
@@ -22,6 +25,10 @@ public class Player : MonoBehaviour
 
     public AudioClip[] tokenSounds;
     private AudioSource sound;
+    public AudioSource[] bgmSounds;
+    private int currSong;
+    public bool[] enemyNear;
+    private int enemiesNear = 0;
 
     private bool blue = false;
     private int potionTip = 0;
@@ -33,20 +40,60 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        deathScreen.SetActive(false);
         textColor = blueText.color;
         sound = gameObject.GetComponent<AudioSource>();
+        currSong = 0;
+        foreach (AudioSource source in bgmSounds)
+        {
+            source.mute = true;
+        }
+        bgmSounds[0].mute = false;
+
+        foreach (Enemy enemy in enemyScripts)
+        {
+            //enemy.move = true;
+            enemy.startMons();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && freeze == false)
         {
+            //Consume blue potion
             if (potionCount > 0 && blue == false)
             {
                 blueUse();
             }
         }
+        if (Input.GetKeyDown("return") && freeze == true)
+        {
+            //Exit from death screen
+            foreach (Enemy enemy in enemyScripts)
+            {
+                enemy.startMons();
+            }
+
+            playBGM(0);
+            deathScreen.SetActive(false);
+            Debug.Log("exiting death");
+            freeze = false;
+        }
+
+        foreach(bool near in enemyNear)
+        {
+            if (near == true)
+            {
+                enemiesNear += 1;
+            }
+        }
+        if (enemiesNear == 0)
+        {
+            playBGM(0); //Play ambient sound;
+        }
+        enemiesNear = 0;
     }
 
     private void FixedUpdate()
@@ -96,11 +143,19 @@ public class Player : MonoBehaviour
 
     private void enemyHit()
     {
+        freeze = true;
+        deathScreen.SetActive(true);
+        gameObject.transform.position = new Vector3(-57.42f,2.56f,3.94f);
+        gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
+        mainCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
         foreach (Enemy enemy in enemyScripts)
         {
             enemy.resetMons();
         }
-        deathScreen.SetActive(true);
+        playBGM(2);
+
+        sound.clip = tokenSounds[6]; //Flame sound
+        sound.PlayOneShot(sound.clip, 1);
 
         if (lives == 2)
         {
@@ -111,12 +166,14 @@ public class Player : MonoBehaviour
         else if (lives == 1)
         {
             deathText.text = lives + " lives left";
+            Destroy(GameObject.Find("Soul (2)"));
             Image soul = GameObject.Find("Soul (1)").GetComponent<Image>();
             soul.CrossFadeAlpha(0, 2, false);
         }
         else if (lives == 0)
         {
             deathText.text = "No lives left";
+            Destroy(GameObject.Find("Soul (1)"));
             Image soul = GameObject.Find("Soul").GetComponent<Image>();
             soul.CrossFadeAlpha(0, 2, false);
             Debug.Log("Game over");
@@ -131,8 +188,8 @@ public class Player : MonoBehaviour
             lives -= 1;
             Debug.Log("Hit");
             enemyHit();
-            //deathCanvas.sortingOrder = 2;   //Brings death screen to front
-            //GameObject.Find("Black Panel").GetComponent<Image>().color = new Color(0, 0, 0, 255);
+            deathCanvas.sortingOrder = 2;   //Brings death screen to front
+            GameObject.Find("Black Panel").GetComponent<Image>().color = new Color(0, 0, 0, 255);
         }
         else if (other.gameObject.CompareTag("Token"))
         {
@@ -171,6 +228,19 @@ public class Player : MonoBehaviour
         else
         {
             Debug.Log("Unknown collision detected");
+        }
+    }
+
+    public void playBGM(int song)
+    {
+        if (currSong != song)
+        {
+            foreach(AudioSource source in bgmSounds)
+            {
+                source.mute = true;
+            }
+            currSong = song;
+            bgmSounds[song].mute = false;
         }
     }
 }

@@ -11,3 +11,6 @@ Potions:
 http://freesoundeffect.net/sound/pickup-generic-pickup-sfx-collection-item-15-sound-effect
 http://freesoundeffect.net/sound/pickup-generic-pickup-sfx-collection-item-16-sound-effect
 http://freesoundeffect.net/sound/pickup-generic-pickup-sfx-collection-item-17-sound-effect
+
+Flame out:
+https://www.zapsplat.com/music/fireballs-deep-whoosh/
