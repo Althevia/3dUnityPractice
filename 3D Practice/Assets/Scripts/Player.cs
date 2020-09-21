@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public bool freeze = false;
 
     public Enemy[] enemyScripts;
+    public MinimapCamera mmCamera;
 
     public int tokenCount = 0;
     public int totalTokens;
@@ -37,6 +38,8 @@ public class Player : MonoBehaviour
 
     public GameObject[] enemies;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +56,7 @@ public class Player : MonoBehaviour
         foreach (Enemy enemy in enemyScripts)
         {
             //enemy.move = true;
+            Debug.Log("enemy");
             enemy.startMons();
         }
     }
@@ -60,27 +64,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space") && freeze == false)
-        {
-            //Consume blue potion
-            if (potionCount > 0 && blue == false)
-            {
-                blueUse();
-            }
-        }
-        if (Input.GetKeyDown("return") && freeze == true)
-        {
-            //Exit from death screen
-            foreach (Enemy enemy in enemyScripts)
-            {
-                enemy.startMons();
-            }
-
-            playBGM(0);
-            deathScreen.SetActive(false);
-            Debug.Log("exiting death");
-            freeze = false;
-        }
+        keyControl();
 
         foreach(bool near in enemyNear)
         {
@@ -241,6 +225,38 @@ public class Player : MonoBehaviour
             }
             currSong = song;
             bgmSounds[song].mute = false;
+        }
+    }
+
+    //Check keypresses
+    private void keyControl()
+    {
+        if (Input.GetKeyDown("space") && freeze == false)
+        {
+            //Consume blue potion
+            if (potionCount > 0 && blue == false)
+            {
+                blueUse();
+            }
+        }
+        if (Input.GetKeyDown("return") && freeze == true)
+        {
+            //Exit from death screen
+            foreach (Enemy enemy in enemyScripts)
+            {
+                enemy.startMons();
+            }
+
+            playBGM(0);
+            deathScreen.SetActive(false);
+            Debug.Log("exiting death");
+            freeze = false;
+        }
+        if (Input.GetKeyDown(KeyCode.M) && freeze == false)
+        {
+            //Toggle zoom on map
+            Debug.Log("m down");
+            mmCamera.toggleZoom();
         }
     }
 }

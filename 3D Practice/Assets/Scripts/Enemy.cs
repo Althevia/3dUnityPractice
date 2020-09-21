@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
     {
         monster = GetComponent<NavMeshAgent>();
         audioSources = GetComponents<AudioSource>();
+        Debug.Log(ID + " starting");
     }
 
     // Update is called once per frame
@@ -40,7 +41,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            if (playerScript.enemyNear[ID] == true && distance > nearDist + 5)
+            if (playerScript.enemyNear[ID] == true && distance > nearDist + 8)
             {
                 playerScript.enemyNear[ID] = false;
             }
@@ -59,10 +60,11 @@ public class Enemy : MonoBehaviour
     public void resetMons()
     {
         move = false;
+        /*
         foreach (AudioSource source in audioSources)
         {
             source.Stop();
-        }
+        }*/
         Vector3 resetPos;
         if (ID == 0)
         {
@@ -81,9 +83,11 @@ public class Enemy : MonoBehaviour
     public void startMons()
     {
         move = true;
+        Debug.Log("spider moving");
+        /*
         foreach (AudioSource source in audioSources)
         {
             source.Play();
-        }
+        }*/
     }
 }
