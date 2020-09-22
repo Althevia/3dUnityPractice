@@ -25,8 +25,11 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         monster = GetComponent<NavMeshAgent>();
+        Debug.Log(monster);
         audioSources = GetComponents<AudioSource>();
         Debug.Log(ID + " starting");
+        resetMons();
+        startMons();
     }
 
     // Update is called once per frame
@@ -51,6 +54,7 @@ public class Enemy : MonoBehaviour
         //if (distance < monsDistanceRun)
         if (move == true)
         {
+            Debug.Log("MOVING");
             dirToPlayer = transform.position - player.transform.position;
             newPos = transform.position - dirToPlayer;
             monster.SetDestination(newPos);
@@ -82,8 +86,8 @@ public class Enemy : MonoBehaviour
 
     public void startMons()
     {
+        Debug.Log("starting mons");
         move = true;
-        Debug.Log("spider moving");
         /*
         foreach (AudioSource source in audioSources)
         {

@@ -53,12 +53,12 @@ public class Player : MonoBehaviour
         }
         bgmSounds[0].mute = false;
 
+        /*
         foreach (Enemy enemy in enemyScripts)
         {
             //enemy.move = true;
-            Debug.Log("enemy");
             enemy.startMons();
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -255,7 +255,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M) && freeze == false)
         {
             //Toggle zoom on map
-            Debug.Log("m down");
             mmCamera.toggleZoom();
         }
     }
