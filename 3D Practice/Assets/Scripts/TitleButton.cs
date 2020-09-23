@@ -26,4 +26,14 @@ public class TitleButton : MonoBehaviour
     {
         SceneManager.LoadScene("Level1");
     }
+
+    public void title()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+    public void toEnd()
+    {
+        SceneManager.LoadScene("End");
+    }
 }

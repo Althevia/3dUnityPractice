@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
 
     public Player playerScript;
     public bool move = false;
-    private int nearDist = 25;
+    private int nearDist = 20;
 
     private AudioSource[] audioSources;
 
@@ -27,7 +27,6 @@ public class Enemy : MonoBehaviour
         monster = GetComponent<NavMeshAgent>();
         Debug.Log(monster);
         audioSources = GetComponents<AudioSource>();
-        Debug.Log(ID + " starting");
         resetMons();
         startMons();
     }
@@ -44,7 +43,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            if (playerScript.enemyNear[ID] == true && distance > nearDist + 8)
+            if (playerScript.enemyNear[ID] == true && distance > nearDist + 10)
             {
                 playerScript.enemyNear[ID] = false;
             }
@@ -54,7 +53,6 @@ public class Enemy : MonoBehaviour
         //if (distance < monsDistanceRun)
         if (move == true)
         {
-            Debug.Log("MOVING");
             dirToPlayer = transform.position - player.transform.position;
             newPos = transform.position - dirToPlayer;
             monster.SetDestination(newPos);
@@ -86,7 +84,6 @@ public class Enemy : MonoBehaviour
 
     public void startMons()
     {
-        Debug.Log("starting mons");
         move = true;
         /*
         foreach (AudioSource source in audioSources)
