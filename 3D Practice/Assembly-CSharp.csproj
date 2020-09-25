@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{030D8DF6-9B92-5D4D-CC47-055DE0BD8C24}</ProjectGuid>
+    <ProjectGuid>{3BAA549F-A770-A0E3-AF11-6A104A81579A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -146,6 +146,7 @@
     <Compile Include="Assets\Imported Assets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\FOVKick.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
+    <Compile Include="Assets\Scripts\CursorEnable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imported Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />

@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     private bool dead = false;
 
     public Enemy[] enemyScripts;
+    public UnityStandardAssets.Characters.FirstPerson.FirstPersonController fpsScript;
+    public GameObject fps;
     public MinimapCamera mmCamera;
 
     public int tokenCount = 0;
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
     private int tipTimer = 0;
     private int countdown = 0;
     public int visTime;
+    private bool mapHint = true;
 
     public GameObject[] enemies;
 
@@ -168,6 +171,7 @@ public class Player : MonoBehaviour
             Image soul = GameObject.Find("Soul").GetComponent<Image>();
             soul.CrossFadeAlpha(0, 2, false);
             dead = true;
+            fpsScript.m_MouseLook.lockCursor = false;
             Debug.Log("Game over");
         }
     }
@@ -181,7 +185,6 @@ public class Player : MonoBehaviour
             Debug.Log("Hit");
             enemyHit();
             deathCanvas.sortingOrder = 2;   //Brings death screen to front
-            //GameObject.Find("Black Panel").GetComponent<Image>().color = new Color(0, 0, 0, 255);
             blue = false;
             foreach (GameObject enemy in enemies)
             {
@@ -206,10 +209,11 @@ public class Player : MonoBehaviour
                 Debug.Log("Collected All");
             }
 
-            if (tokenCount >= 2 * totalTokens / 3)
+            if (mapHint == true && tokenCount >= 2 * totalTokens / 3)
             {
                 eventText.text = "Expand map with M";
                 tipTimer = 500;
+                mapHint = false;
             }
         }
         else if (other.gameObject.CompareTag("BlueBottle"))

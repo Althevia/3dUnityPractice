@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         monster = GetComponent<NavMeshAgent>();
-        Debug.Log(monster);
         audioSources = GetComponents<AudioSource>();
         resetMons();
         startMons();
