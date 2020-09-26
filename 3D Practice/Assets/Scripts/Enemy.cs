@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(transform.position, player.transform.position);
-
+        //Triggers for suspense music
         if (distance < nearDist)
         {
             playerScript.enemyNear[ID] = true;
@@ -52,8 +52,9 @@ public class Enemy : MonoBehaviour
         //if (distance < monsDistanceRun)
         if (move == true)
         {
-            dirToPlayer = transform.position - player.transform.position;
-            newPos = transform.position - dirToPlayer;
+            //dirToPlayer = transform.position - player.transform.position;
+            //newPos = transform.position - dirToPlayer;
+            newPos = player.transform.position;
             monster.SetDestination(newPos);
         }
     }
@@ -89,5 +90,11 @@ public class Enemy : MonoBehaviour
         {
             source.Play();
         }*/
+    }
+
+    //Change speed of spider
+    public void setSpeed(float speed)
+    {
+        monster.speed = speed;
     }
 }

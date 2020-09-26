@@ -171,7 +171,6 @@ public class Player : MonoBehaviour
             Image soul = GameObject.Find("Soul").GetComponent<Image>();
             soul.CrossFadeAlpha(0, 2, false);
             dead = true;
-            fpsScript.m_MouseLook.lockCursor = false;
             Debug.Log("Game over");
         }
     }
@@ -206,15 +205,37 @@ public class Player : MonoBehaviour
             if (tokenCount == totalTokens)
             {
                 eventText.text = "Escape!";
-                Debug.Log("Collected All");
+                foreach (Enemy enemy in enemyScripts)
+                {
+                    enemy.setSpeed(7.9f);
+                }
             }
 
             if (mapHint == true && tokenCount >= 2 * totalTokens / 3)
             {
                 eventText.text = "Expand map with M";
-                tipTimer = 500;
+                tipTimer = 650;
                 mapHint = false;
             }
+
+            if (tokenCount == totalTokens / 2)
+            {
+                foreach (Enemy enemy in enemyScripts)
+                {
+                    enemy.setSpeed(7.5f);
+                }
+                Debug.Log("7.5 speed");
+            }
+            else if (tokenCount == totalTokens * 0.9)
+            {
+                foreach (Enemy enemy in enemyScripts)
+                {
+                    enemy.setSpeed(7.6f);
+                }
+                Debug.Log("7.6 speed");
+            }
+
+
         }
         else if (other.gameObject.CompareTag("BlueBottle"))
         {
