@@ -43,7 +43,9 @@ public class Player : MonoBehaviour
     private bool mapHint = true;
 
     public GameObject[] enemies;
-
+    private int newClosest = -1;
+    private float closestDist = 1000;
+    private float enemySpeed = 7.1f;
 
 
     // Start is called before the first frame update
@@ -117,6 +119,41 @@ public class Player : MonoBehaviour
                 eventText.text = "";
             }
         }
+
+
+        //Closest spider gets a speed boost
+        foreach (Enemy enemy in enemyScripts)
+        {
+            if (enemy.distToPlayer() < closestDist)
+            {
+                closestDist = enemy.distToPlayer();
+                newClosest = enemy.ID;
+            }
+        }
+        //Debug.Log(newClosest + "  " + closestDist);
+        closestDist = 1000; //Reset
+        /*
+        if (newClosest != closest)
+        {
+            //New closest enemy
+            enemyScripts[newClosest].closestBuff();
+            enemyScripts[closest].notClosestAnymore();
+            closest = newClosest;
+        }*/
+
+
+        foreach (Enemy enemy in enemyScripts)
+        {
+            if (enemy.ID == newClosest)
+            {
+                enemy.setSpeed(enemySpeed + 0.2f);
+            }
+            else
+            {
+                enemy.setSpeed(enemySpeed);
+            }
+        }
+
     }
 
     //Use potion
@@ -205,10 +242,7 @@ public class Player : MonoBehaviour
             if (tokenCount == totalTokens)
             {
                 eventText.text = "Escape!";
-                foreach (Enemy enemy in enemyScripts)
-                {
-                    enemy.setSpeed(7.9f);
-                }
+                enemySpeed = 7.8f;
             }
 
             if (mapHint == true && tokenCount >= 2 * totalTokens / 3)
@@ -220,19 +254,11 @@ public class Player : MonoBehaviour
 
             if (tokenCount == totalTokens / 2)
             {
-                foreach (Enemy enemy in enemyScripts)
-                {
-                    enemy.setSpeed(7.5f);
-                }
-                Debug.Log("7.5 speed");
+                enemySpeed = 7.3f;
             }
             else if (tokenCount == totalTokens * 0.9)
             {
-                foreach (Enemy enemy in enemyScripts)
-                {
-                    enemy.setSpeed(7.6f);
-                }
-                Debug.Log("7.6 speed");
+                enemySpeed = 7.5f;
             }
 
 

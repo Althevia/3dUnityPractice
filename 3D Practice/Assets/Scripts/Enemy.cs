@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
 
     public Player playerScript;
     public bool move = false;
-    private int nearDist = 20;
+    private int nearDist = 26;
 
     private AudioSource[] audioSources;
 
@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            if (playerScript.enemyNear[ID] == true && distance > nearDist + 10)
+            if (playerScript.enemyNear[ID] == true && distance > nearDist + 5)
             {
                 playerScript.enemyNear[ID] = false;
             }
@@ -96,5 +96,21 @@ public class Enemy : MonoBehaviour
     public void setSpeed(float speed)
     {
         monster.speed = speed;
+    }
+
+    public void closestBuff()
+    {
+        monster.speed += 0.2f;
+    }
+
+    public void notClosestAnymore()
+    {
+        monster.speed -= 0.2f;
+    }
+
+    public float distToPlayer()
+    {
+        distance = Vector3.Distance(transform.position, player.transform.position);
+        return distance;
     }
 }
