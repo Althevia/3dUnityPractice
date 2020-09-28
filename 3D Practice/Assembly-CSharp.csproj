@@ -67,7 +67,6 @@
     <Compile Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Scripts\ExtinguishableParticleSystem.cs" />
     <Compile Include="Assets\Scripts\CursorEnable.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
-    <Compile Include="Assets\Imported Assets\Laterns and candles\scripts\ExtendedFlycam.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
@@ -117,7 +116,6 @@
     <Compile Include="Assets\Imported Assets\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Scripts\FireLight.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
-    <Compile Include="Assets\Imported Assets\Laterns and candles\scripts\CameraFacing.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
     <Compile Include="Assets\Imported Assets\SampleScenes\Scripts\SlowMoButton.cs" />
@@ -178,7 +176,6 @@
     <None Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\Imported Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Imported Assets\Mega Fantasy Props Pack\README.txt" />
-    <None Include="Assets\Imported Assets\Spiders\animations list.txt" />
     <None Include="Assets\Audio\Sources.txt" />
     <None Include="Assets\Imported Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Imported Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
