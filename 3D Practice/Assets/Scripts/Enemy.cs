@@ -70,14 +70,14 @@ public class Enemy : MonoBehaviour
         Vector3 resetPos;
         if (ID == 0)
         {
-            resetPos = new Vector3(-38.6f, -0.94f, 70.2f);
+            resetPos = new Vector3(-48.6f, -0.94f, 76.41f);
         }else if (ID == 1)
         {
-            resetPos = new Vector3(44.4f, -0.94f, -60.8f);
+            resetPos = new Vector3(52.11f, -0.94f, -72f);
         }
         else
         {
-            resetPos = new Vector3(36.19f, -0.94f, 74.43f);
+            resetPos = new Vector3(42.17f, -0.94f, 83.1f);
         }
         monster.Warp(resetPos);
     }

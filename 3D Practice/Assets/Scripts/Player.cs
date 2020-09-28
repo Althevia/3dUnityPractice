@@ -14,9 +14,9 @@ public class Player : MonoBehaviour
     private bool dead = false;
 
     public Enemy[] enemyScripts;
-    public UnityStandardAssets.Characters.FirstPerson.FirstPersonController fpsScript;
-    public GameObject fps;
     public MinimapCamera mmCamera;
+    public Light mainLight;
+    public Light endLight;
 
     public int tokenCount = 0;
     public int totalTokens;
@@ -25,8 +25,7 @@ public class Player : MonoBehaviour
     public Text tokenText;
     public Text blueText;
     public Text eventText;
-    public Text deathText;
-    public Text deathText2;
+    public Text[] deathTexts;
     private Color textColor;
 
     public AudioClip[] tokenSounds;
@@ -76,19 +75,27 @@ public class Player : MonoBehaviour
     void Update()
     {
         keyControl();
-
-        foreach(bool near in enemyNear)
+        if (tokenCount == totalTokens)
         {
-            if (near == true)
+            playBGM(1); //Perma intense music for end
+        }
+        else
+        {
+            //Check if nearby enemies to play sound
+            foreach(bool near in enemyNear)
             {
-                enemiesNear += 1;
+                if (near == true)
+                {
+                    enemiesNear += 1;
+                }
             }
+            if (enemiesNear == 0)
+            {
+                playBGM(0); //Play ambient sound;
+            }
+            enemiesNear = 0;
         }
-        if (enemiesNear == 0)
-        {
-            playBGM(0); //Play ambient sound;
-        }
-        enemiesNear = 0;
+        
     }
 
     private void FixedUpdate()
@@ -190,20 +197,21 @@ public class Player : MonoBehaviour
 
         if (lives == 2)
         {
-            deathText.text = lives + " lives left";
+            deathTexts[1].text = lives + " lives left";
             Image soul = GameObject.Find("Soul (2)").GetComponent<Image>();
             soul.CrossFadeAlpha(0, 2, false);
         }
         else if (lives == 1)
         {
-            deathText.text = lives + " lives left";
+            deathTexts[1].text = lives + " lives left";
             Destroy(GameObject.Find("Soul (2)"));
             Image soul = GameObject.Find("Soul (1)").GetComponent<Image>();
             soul.CrossFadeAlpha(0, 2, false);
         }
         else if (lives == 0)
         {
-            deathText.text = "No lives left\nYou died!";
+            deathTexts[1].text = "No lives left\n" + tokenCount + " coins collected";
+            deathTexts[0].text = "You died!";
             Destroy(GameObject.Find("Soul (1)"));
             Image soul = GameObject.Find("Soul").GetComponent<Image>();
             soul.CrossFadeAlpha(0, 2, false);
@@ -243,16 +251,10 @@ public class Player : MonoBehaviour
             {
                 eventText.text = "Escape!";
                 enemySpeed = 7.8f;
+                mainLight.gameObject.SetActive(false);
+                endLight.gameObject.SetActive(true);
             }
-
-            if (mapHint == true && tokenCount >= 2 * totalTokens / 3)
-            {
-                eventText.text = "Expand map with M";
-                tipTimer = 650;
-                mapHint = false;
-            }
-
-            if (tokenCount == totalTokens / 2)
+            else if (tokenCount == totalTokens / 2)
             {
                 enemySpeed = 7.3f;
             }
@@ -261,6 +263,12 @@ public class Player : MonoBehaviour
                 enemySpeed = 7.5f;
             }
 
+            if (mapHint == true && tokenCount >= 2 * totalTokens / 3)
+            {
+                eventText.text = "Expand map with M";
+                tipTimer = 700;
+                mapHint = false;
+            }
 
         }
         else if (other.gameObject.CompareTag("BlueBottle"))
