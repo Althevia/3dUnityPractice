@@ -62,8 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Imported Assets\SampleScenes\Scripts\LevelReset.cs" />
-    <Compile Include="Assets\Imported Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Scripts\ExtinguishableParticleSystem.cs" />
     <Compile Include="Assets\Scripts\CursorEnable.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
@@ -71,7 +69,6 @@
     <Compile Include="Assets\Imported Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\EventSystemChecker.cs" />
-    <Compile Include="Assets\Imported Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Scripts\Hose.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
@@ -91,7 +88,6 @@
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\CameraRefocus.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\PlatformSpecificContent.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
-    <Compile Include="Assets\Imported Assets\SampleScenes\Scripts\CameraSwitch.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\ActivateTrigger.cs" />
     <Compile Include="Assets\Scripts\MinimapCamera.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
@@ -108,7 +104,6 @@
     <Compile Include="Assets\Imported Assets\Standard Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
-    <Compile Include="Assets\Imported Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\ObjectResetter.cs" />
@@ -118,7 +113,6 @@
     <Compile Include="Assets\Imported Assets\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
-    <Compile Include="Assets\Imported Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Cameras\Scripts\TargetFieldOfView.cs" />
@@ -128,9 +122,7 @@
     <Compile Include="Assets\Imported Assets\Standard Assets\Cameras\Scripts\HandHeldCam.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\AlphaButtonClickMask.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\DynamicShadowSettings.cs" />
-    <Compile Include="Assets\Imported Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-    <Compile Include="Assets\Imported Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\Utility\LerpControlledBob.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Imported Assets\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
@@ -155,7 +147,6 @@
     <None Include="Assets\Imported Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Imported Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Imported Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
-    <None Include="Assets\Imported Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\Imported Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Imported Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Imported Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />

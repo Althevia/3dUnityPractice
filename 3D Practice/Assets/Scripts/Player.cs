@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     public GameObject[] enemies;
     private int newClosest = -1;
     private float closestDist = 1000;
-    private float enemySpeed = 7.1f;
+    private float enemySpeed = 7.2f;
 
 
     // Start is called before the first frame update
@@ -122,7 +122,6 @@ public class Player : MonoBehaviour
             tipTimer -= 1;
             if (tipTimer == 0)
             {
-                Debug.Log("Tip over");
                 eventText.text = "";
             }
         }
@@ -137,7 +136,6 @@ public class Player : MonoBehaviour
                 newClosest = enemy.ID;
             }
         }
-        //Debug.Log(newClosest + "  " + closestDist);
         closestDist = 1000; //Reset
         /*
         if (newClosest != closest)
@@ -216,7 +214,6 @@ public class Player : MonoBehaviour
             Image soul = GameObject.Find("Soul").GetComponent<Image>();
             soul.CrossFadeAlpha(0, 2, false);
             dead = true;
-            Debug.Log("Game over");
         }
     }
 
@@ -226,7 +223,6 @@ public class Player : MonoBehaviour
         {
             //Enemy collision detected
             lives -= 1;
-            Debug.Log("Hit");
             enemyHit();
             deathCanvas.sortingOrder = 2;   //Brings death screen to front
             blue = false;
@@ -256,11 +252,11 @@ public class Player : MonoBehaviour
             }
             else if (tokenCount == totalTokens / 2)
             {
-                enemySpeed = 7.3f;
+                enemySpeed = 7.4f;
             }
             else if (tokenCount == totalTokens * 0.9)
             {
-                enemySpeed = 7.5f;
+                enemySpeed = 7.55f;
             }
 
             if (mapHint == true && tokenCount >= 2 * totalTokens / 3)
@@ -332,7 +328,6 @@ public class Player : MonoBehaviour
 
                 playBGM(0);
                 deathScreen.SetActive(false);
-                Debug.Log("exiting death");
                 freeze = false;
             }
             else
